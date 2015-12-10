@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.Xml.Serialization;
+using System.Text;
+using System.Xml;
 
 namespace Assignment_3
 {
@@ -17,42 +20,43 @@ namespace Assignment_3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            Movie movies = readFile();
-            //Movie test = (Movie)movies[0];
-            MessageBox.Show(movies.title);
-
-
+            MovieList movies = readFile();
             Application.Run(new MainScreen());
         }
 
-        public static Movie readFile()
+
+        //Pass in a movie list object and it will write to the xml file.
+        public static void writeFile(MovieList movies)
         {
-            ArrayList movies = new ArrayList();
-            ArrayList genre = new ArrayList();
-            ArrayList actors = new ArrayList();
-            genre.Add("Drama");
-            genre.Add("Comedy");
-            actors.Add("Samuel L Jackson");
-            actors.Add("Bruce Willis");
-            actors.Add("John Travolta");
 
-            Movie temp = new Movie("Pulp Fiction", "Two Hours", "R", "QT", 1994, 10, genre, actors);
-            //movies.Add(temp);
-            var writer = new System.Xml.Serialization.XmlSerializer(typeof(Movie));
-            var wfile = new System.IO.StreamWriter(@"test.xml");
-            writer.Serialize(wfile, temp);
+
+            var xml = new StringBuilder();
+
+            using (var writer = XmlWriter.Create(xml, new XmlWriterSettings { OmitXmlDeclaration = true } ) );
+
+            var ns = new XmlSerializerNamespaces();
+            ns.Add("", "");
+
+
+
+            var xs = new XmlSerializer(typeof(MovieList));
+            var wfile = new System.IO.StreamWriter(@"movies.xml");
+            xs.Serialize(wfile, movies, ns);
             wfile.Close();
+        }
 
-
-            System.Xml.Serialization.XmlSerializer reader = new System.Xml.Serialization.XmlSerializer(typeof(Movie));
-            System.IO.StreamReader file = new System.IO.StreamReader(@"test.xml");
-            Movie moviesDeserialzed = (Movie)reader.Deserialize(file);
+        //Call this function to get the list from the XML file. Take note the XML file needs an extra
+        // <MovieList> encapsulating the whole thing in 
+        public static MovieList readFile()
+        { 
+            XmlSerializer reader = new XmlSerializer(typeof(MovieList));
+            System.IO.StreamReader file = new System.IO.StreamReader(@"movies.xml");
+            MovieList moviesDeserialzed = (MovieList)reader.Deserialize(file);
             file.Close();
-            return temp;
-            //return moviesDeserialzed;
+            return moviesDeserialzed;
         }
 
     }
+
 
 }

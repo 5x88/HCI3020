@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.searchPromptText = new System.Windows.Forms.Label();
             this.searchBoxEntry = new System.Windows.Forms.TextBox();
             this.changeToAdvanced = new System.Windows.Forms.LinkLabel();
             this.searchButtonGo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchPromptText
@@ -86,10 +83,6 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Watch List";
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
-            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,7 +95,6 @@
             this.Controls.Add(this.searchPromptText);
             this.Name = "MainScreen";
             this.Text = "MainScreen";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,6 +107,5 @@
         private System.Windows.Forms.LinkLabel changeToAdvanced;
         private System.Windows.Forms.Button searchButtonGo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
