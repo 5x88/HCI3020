@@ -20,7 +20,7 @@ namespace Assignment_3
 
             Movie movies = readFile();
             //Movie test = (Movie)movies[0];
-            MessageBox.Show(movies.title);
+          //  MessageBox.Show(movies.title);
 
 
             Application.Run(new MainScreen());

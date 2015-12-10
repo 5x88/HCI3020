@@ -12,41 +12,44 @@ using System.Xml.Linq;
 
 namespace Assignment_3
 {
-    public partial class Form1 : Form
+    public partial class AddWindow : Form
     {
-        public Form1()
+
+
+        public AddWindow()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            addFromWindow();
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
-        
+
         private void addFromWindow()
         {
             Movie newMovie;
-            ArrayList genre = new ArrayList();
-            ArrayList actors = new ArrayList();
+            
+            String[] actors = new String[5];
+            String[] genre = textBox12.Text.Split(',');
 
-            actors.Add(textBox3.Text);
-            actors.Add(textBox4.Text);
-            actors.Add(textBox5.Text);
-            actors.Add(textBox6.Text);
-            actors.Add(textBox7.Text);
+            actors[0] = (textBox3.Text);
+            actors[1] = (textBox4.Text);
+            actors[2] = (textBox5.Text);
+            actors[3] = (textBox6.Text);
+            actors[4] = (textBox7.Text);
 
-            genre.Add(textBox11.Text);
+         //  newMovie = new Movie(textBox1.Text, textBox10.Text, textBox8.Text, textBox11.Text, Int32.Parse(textBox2.Text),
+           //     Int32.Parse(textBox9.Text), genre, actors);
 
-            newMovie = new Movie(textBox1.Text,);
-
-
+        }
 
     }
 }
