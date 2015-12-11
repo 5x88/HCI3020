@@ -93,7 +93,9 @@ namespace Assignment_3
 
         private void changeToAdvanced_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Advanced Search
+            this.Visible = false;
+            AddWindow add = new AddWindow(this);
+            add.Show();
         }
     }
 }

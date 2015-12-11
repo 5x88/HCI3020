@@ -14,21 +14,30 @@ namespace Assignment_3
 {
     public partial class AddWindow : Form
     {
-
+        MainScreen mainscreen;
 
         public AddWindow()
         {
+            InitializeComponent();
+        }
+        
+
+        public AddWindow(MainScreen _mainscreen)
+        {
+            mainscreen = _mainscreen;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             addFromWindow();
+            mainscreen.Visible = true;
             Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            mainscreen.Visible = true;
             Close();
         }
 
