@@ -58,11 +58,6 @@ namespace Assignment_3
             return moviesDeserialzed;
         }
 
-        public static void addToList(MovieList movie)
-        {
-            
-        }
-
 
     }
 
