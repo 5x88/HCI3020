@@ -21,7 +21,7 @@ namespace Assignment_3
         }
 
         private void button1_Click(object sender, EventArgs e) {
-
+            ChartScreen chart = new ChartScreen();
             searchMovies();
 
             parent.Visible = true;
@@ -107,7 +107,7 @@ namespace Assignment_3
                 foreach (var x in results2.movielist)
                 {
 
-                if(int.Parse(comboBox1.Text)>)
+               // if(int.Parse(comboBox1.Text)>)
 
                 }
 

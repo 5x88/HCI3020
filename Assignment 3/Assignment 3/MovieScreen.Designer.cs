@@ -47,6 +47,9 @@
             this.genre3 = new System.Windows.Forms.Label();
             this.genre2 = new System.Windows.Forms.Label();
             this.genre1 = new System.Windows.Forms.Label();
+            this.leaveReview = new System.Windows.Forms.Button();
+            this.reviewBox = new System.Windows.Forms.ListBox();
+            this.userreviews = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // title
@@ -238,11 +241,42 @@
             this.genre1.TabIndex = 14;
             this.genre1.Text = "Genre";
             // 
+            // leaveReview
+            // 
+            this.leaveReview.Location = new System.Drawing.Point(19, 388);
+            this.leaveReview.Name = "leaveReview";
+            this.leaveReview.Size = new System.Drawing.Size(94, 23);
+            this.leaveReview.TabIndex = 19;
+            this.leaveReview.Text = "Leave a Review";
+            this.leaveReview.UseVisualStyleBackColor = true;
+            this.leaveReview.Click += new System.EventHandler(this.leaveReview_Click);
+            // 
+            // reviewBox
+            // 
+            this.reviewBox.FormattingEnabled = true;
+            this.reviewBox.Location = new System.Drawing.Point(357, 37);
+            this.reviewBox.Name = "reviewBox";
+            this.reviewBox.Size = new System.Drawing.Size(368, 368);
+            this.reviewBox.TabIndex = 21;
+            // 
+            // userreviews
+            // 
+            this.userreviews.AutoSize = true;
+            this.userreviews.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userreviews.Location = new System.Drawing.Point(490, 9);
+            this.userreviews.Name = "userreviews";
+            this.userreviews.Size = new System.Drawing.Size(125, 24);
+            this.userreviews.TabIndex = 22;
+            this.userreviews.Text = "User Reviews";
+            // 
             // MovieScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 421);
+            this.ClientSize = new System.Drawing.Size(737, 421);
+            this.Controls.Add(this.userreviews);
+            this.Controls.Add(this.reviewBox);
+            this.Controls.Add(this.leaveReview);
             this.Controls.Add(this.genre5);
             this.Controls.Add(this.genre4);
             this.Controls.Add(this.genre3);
@@ -290,5 +324,8 @@
         private System.Windows.Forms.Label genre3;
         private System.Windows.Forms.Label genre2;
         private System.Windows.Forms.Label genre1;
+        private System.Windows.Forms.Button leaveReview;
+        private System.Windows.Forms.ListBox reviewBox;
+        private System.Windows.Forms.Label userreviews;
     }
 }
