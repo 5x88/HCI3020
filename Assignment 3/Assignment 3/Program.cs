@@ -37,7 +37,7 @@ namespace Assignment_3
 
             var xml = new StringBuilder();
 
-            using (var writer = XmlWriter.Create(xml, new XmlWriterSettings { OmitXmlDeclaration = true } ) );
+            using (var writer = XmlWriter.Create(xml, new XmlWriterSettings { OmitXmlDeclaration = true } ));
 
             var ns = new XmlSerializerNamespaces();
             ns.Add("", "");
