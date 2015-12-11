@@ -94,14 +94,13 @@
             // 
             // watchListView
             // 
-            this.watchListView.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.watchListView.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             this.watchListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.title,
             this.year,
             this.genre});
             this.watchListView.FullRowSelect = true;
             this.watchListView.GridLines = true;
-            this.watchListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.watchListView.Location = new System.Drawing.Point(21, 131);
             this.watchListView.Name = "watchListView";
             this.watchListView.Size = new System.Drawing.Size(397, 305);

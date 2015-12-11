@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace Assignment_3
 {
-    public partial class MainScreen : Form 
+    public partial class MainScreen : Form
     {
 
         public MainScreen()
@@ -31,9 +31,9 @@ namespace Assignment_3
                 titles[i] = Program.movies.movielist[i].title;
             }
 
-     
+
             //this.watchListView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            foreach(var x in Program.movies.movielist)
+            foreach (var x in Program.movies.movielist)
             {
                 ListViewItem item = new ListViewItem(new String[]
                 {
@@ -45,10 +45,10 @@ namespace Assignment_3
             }
 
             //watchListView.Rows.Add(totalMovies);
-           // int rowNumber = 1;
+            // int rowNumber = 1;
 
             //Program.writeFile();
- 
+
             //MessageBox.Show(movies.movielist[0].actor[0]);
 
 
@@ -66,9 +66,11 @@ namespace Assignment_3
             string[] search = searchBoxEntry.Text.Split(' ');
 
             //Run through the list of movies, collecting the results
-            foreach (var x in Program.movies.movielist){   
+            foreach (var x in Program.movies.movielist)
+            {
                 //If search has any strings in it that title also has in it, return true
-                if (search.Where(i => x.title.Contains(i)).Any()) {
+                if (search.Where(i => x.title.Contains(i)).Any())
+                {
                     results.movielist.Add(x);
                 }
             }
@@ -78,7 +80,9 @@ namespace Assignment_3
             {
                 MessageBox.Show("No results!");
 
-            } else {
+            }
+            else
+            {
 
                 MainScreen resultScreen = new MainScreen();
 
@@ -92,14 +96,14 @@ namespace Assignment_3
                     x.year.ToString(),
                     x.genre[0]
                     });
-                   resultScreen.watchListView.Items.Add(item);
+                    resultScreen.watchListView.Items.Add(item);
                 }
 
                 this.Hide();
                 resultScreen.ShowDialog();
                 this.Close();
-       
-              }
+
+            }
 
         }
 
@@ -111,13 +115,34 @@ namespace Assignment_3
         private void changeToAdvanced_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //Advanced Search
-            MessageBox.Show("HI");
         }
 
         private void watchListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+
+        }
+
+        private void watchListView_DoubleClick(object sender, EventArgs e)
+        {
+
+            String item = watchListView.FocusedItem.SubItems[0].Text;
+
+            MessageBox.Show(item);
             AddScreen Selected = new AddScreen();
-            
+            foreach (var x in Program.movies.movielist)
+            {
+
+                if (x.title.Contains(watchListView.SelectedItems.ToString()))
+                {
+
+                    MessageBox.Show(watchListView.SelectedItems.ToString());
+                    Selected.editEntry(x);
+
+                }
+
+
+            }
         }
     }
 }

@@ -53,9 +53,9 @@ namespace Assignment_3
             Program.writeFile();
         }
 
-        public void showEntry()
+        public void editEntry(Movie edit)
         {
-
+            MessageBox.Show(edit.title);
         }
 
 
