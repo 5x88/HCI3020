@@ -54,8 +54,8 @@ namespace Assignment_3
         private void changeToAdvanced_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Visible = false;
-            AddWindow add = new AddWindow(this);
-            add.Show();
+            AdvancedSearch advS = new AdvancedSearch(this);
+            advS.Show();
         }
 
         private void populateMovieList(MovieList list)

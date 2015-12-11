@@ -23,7 +23,7 @@ namespace Assignment_3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            movies = readFile();
+            movies = readFile("movies.xml");
             watchlist = new MovieList();
             searchlist = new MovieList();
             Application.Run(new MainScreen());
@@ -52,10 +52,10 @@ namespace Assignment_3
 
         //Call this function to get the list from the XML file. Take note the XML file needs an extra
         // <MovieList> encapsulating the whole thing in 
-        public static MovieList readFile()
-        { 
+        public static MovieList readFile(string input)
+        {
             XmlSerializer reader = new XmlSerializer(typeof(MovieList));
-            System.IO.StreamReader file = new System.IO.StreamReader(@"movies.xml");
+            System.IO.StreamReader file = new System.IO.StreamReader(@input);
             MovieList moviesDeserialzed = (MovieList)reader.Deserialize(file);
             file.Close();
             return moviesDeserialzed;
