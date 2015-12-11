@@ -29,6 +29,8 @@ namespace Assignment_3
         public String[] genre;
         [XmlElement("actor")]
         public String[] actor;
+        [XmlIgnoreAttribute]
+        public List<String> reviews;
 
 
 

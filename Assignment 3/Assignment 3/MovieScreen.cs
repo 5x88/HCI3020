@@ -12,9 +12,11 @@ namespace Assignment_3
 {
     public partial class MovieScreen : Form
     {
+        public Movie selectedMovie;
         public MovieScreen(Movie selected)
         {
             InitializeComponent();
+            selectedMovie = selected;
             this.title.Text = selected.title;
             this.year.Text = selected.year.ToString();
             this.length.Text = selected.length;
@@ -73,15 +75,21 @@ namespace Assignment_3
             } else {
                 this.genre5.Text = "";
             }
-
-
-
+            if(selected.reviews!= null) {
+                reviewBox.DataSource = selected.reviews;
+            }
             this.Show();
 
         }
 
         private void rating_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void leaveReview_Click(object sender, EventArgs e) {
+            LeaveReview reviewForm = new LeaveReview(this);
+            reviewForm.Show();
 
         }
     }
