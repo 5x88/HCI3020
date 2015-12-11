@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.genreTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -61,6 +63,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Accept";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -161,7 +164,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 191);
+            this.label8.Location = new System.Drawing.Point(9, 216);
             this.label8.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 13);
@@ -199,7 +202,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 216);
+            this.label9.Location = new System.Drawing.Point(9, 191);
             this.label9.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
@@ -242,8 +245,9 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // AddWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -271,7 +275,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "AddWindow";
             this.Text = "Add A Movie";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -303,6 +307,7 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolTip genreTip;
     }
 }
 

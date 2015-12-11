@@ -12,6 +12,8 @@ namespace Assignment_3
 {
     static class Program
     {
+        public static MovieList movies;
+        public static MovieList watchList;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -20,13 +22,13 @@ namespace Assignment_3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            MovieList movies = readFile();
+            movies = readFile();
             Application.Run(new MainScreen());
         }
 
 
         //Pass in a movie list object and it will write to the xml file.
-        public static void writeFile(MovieList movies)
+        public static void writeFile()
         {
 
 
