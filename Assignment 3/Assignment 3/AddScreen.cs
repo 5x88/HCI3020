@@ -38,7 +38,7 @@ namespace Assignment_3
             Movie newMovie;
             
             String[] actors = new String[5];
-            String[] genre = textBox12.Text.Split(',');
+            String[] genre = textBox12.Text.Split(' ');
 
             actors[0] = (textBox3.Text);
             actors[1] = (textBox4.Text);
@@ -46,9 +46,11 @@ namespace Assignment_3
             actors[3] = (textBox6.Text);
             actors[4] = (textBox7.Text);
 
-         //  newMovie = new Movie(textBox1.Text, textBox10.Text, textBox8.Text, textBox11.Text, Int32.Parse(textBox2.Text),
-           //     Int32.Parse(textBox9.Text), genre, actors);
 
+           newMovie = new Movie(textBox1.Text, textBox10.Text, textBox8.Text, textBox11.Text, Convert.ToInt32(textBox2.Text),
+                int.Parse(textBox9.Text), genre, actors);
+            Program.movies.movielist.Add(newMovie);
+            Program.writeFile();
         }
 
     }
