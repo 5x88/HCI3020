@@ -16,7 +16,6 @@ namespace Assignment_3
         public AdvancedSearch(MainScreen sender)
         {
             parent = sender;
-            sender.Hide();
             InitializeComponent();
         }
 
@@ -115,21 +114,27 @@ namespace Assignment_3
                 minYear = 1900;
                 MaxYear = 2015;
             }
-            else if((comboBox2 == null) || !(comboBox1 == null))
-            {
-                minYear = int.Parse(comboBox1.Text);
-                MaxYear = 2015;
-            }
-            else if ((comboBox1 == null) || !(comboBox2 == null))
-            {
-                minYear = 1900;
-                MaxYear = int.Parse(comboBox2.Text);
-            }
-            else
-            {
-                minYear = int.Parse(comboBox1.Text);
-                MaxYear = int.Parse(comboBox2.Text);
-            }
+            
+            
+                if (comboBox1.SelectedItem == null)
+                {
+                    minYear = 1900;
+                }
+                else
+                {
+                    minYear = Int32.Parse(comboBox1.Text);
+                }
+
+                if (comboBox2.SelectedItem == null)
+                {
+                    MaxYear = 2015;
+                }
+                else
+                {
+                    MaxYear = Int32.Parse(comboBox2.Text);
+                }
+            
+
             foreach (var x in results2.movielist)
             {
                 if (minYear <= x.year && MaxYear >= x.year)

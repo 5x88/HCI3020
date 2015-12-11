@@ -101,6 +101,10 @@ namespace Assignment_3
 
         private void button3_Click(object sender, EventArgs e)
         {
+            AddWindow EditWin = new AddWindow();
+            EditWin.Show();
+            EditWin.editEntry(selectedMovie);
+            
 
         }
     }

@@ -59,8 +59,7 @@ namespace Assignment_3
 
         private void changeToAdvanced_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Visible = false;
-            //watchListView.Clear();
+
             AdvancedSearch advS = new AdvancedSearch(this);
             advS.Show();
         }
@@ -76,6 +75,7 @@ namespace Assignment_3
                     x.genre[0]
                 });
                 watchListView.Items.Add(item);
+                activeList = list;
             }
         }
 
@@ -97,6 +97,13 @@ namespace Assignment_3
         {
             MovieScreen selectedMovie = new MovieScreen(activeList.movielist[watchListView.SelectedIndices[0]]);
         }
-        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddWindow addNew = new AddWindow();
+            addNew.Show();
+
+            
+        }
     }
 }

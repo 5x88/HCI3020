@@ -31,18 +31,17 @@ namespace Assignment_3
         private void button1_Click(object sender, EventArgs e)
         {
             addFromWindow();
-            mainscreen.Visible = true;
+            
             Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            mainscreen.Visible = true;
             Close();
         }
 
 
-        private void addFromWindow()
+        public void addFromWindow()
         {
             Movie newMovie;
             
@@ -62,11 +61,33 @@ namespace Assignment_3
             Program.writeFile();
         }
 
-        private void editEntry(Movie movie)
+        public void editEntry(Movie movie)
         {
+
+            string genre ="";
+
+            for(int i = 0; i<movie.genre.Length; i++)
+            {
+                genre += " " + movie.genre[i];
+            }
+
+            
+
             textBox1.Text = movie.title;
             textBox2.Text = "" + movie.year;
+            textBox3.Text = movie.actor[0];
+            textBox4.Text = movie.actor[1];
+            textBox5.Text = movie.actor[2];
+            textBox6.Text = movie.actor[3];
+            textBox7.Text = movie.actor[4];
 
+            textBox8.Text = movie.certification;
+            textBox9.Text = "" + movie.rating;
+            textBox10.Text = movie.length;
+            textBox11.Text = movie.director;
+            textBox12.Text = genre;
+
+            Program.movies.movielist.Remove(movie);
 
 
         }

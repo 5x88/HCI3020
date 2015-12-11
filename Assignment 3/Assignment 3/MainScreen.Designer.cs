@@ -42,6 +42,7 @@ namespace Assignment_3
             this.changeToAdvanced = new System.Windows.Forms.LinkLabel();
             this.backToWatchList = new System.Windows.Forms.Button();
             this.movieListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.movieListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,11 +144,22 @@ namespace Assignment_3
             this.movieListBindingSource.DataSource = typeof(Assignment_3.MovieList);
             this.movieListBindingSource.CurrentChanged += new System.EventHandler(this.movieListBindingSource_CurrentChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(199, 49);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Add Movie";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 448);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.backToWatchList);
             this.Controls.Add(this.watchListView);
             this.Controls.Add(this.label1);
@@ -177,5 +189,6 @@ namespace Assignment_3
         private System.Windows.Forms.Button backToWatchList;
         public System.Windows.Forms.ListView watchListView;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
