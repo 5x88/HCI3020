@@ -20,7 +20,8 @@ namespace Assignment_3
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void button1_Click(object sender, EventArgs e)
+        {
 
             searchMovies();
 
@@ -33,7 +34,7 @@ namespace Assignment_3
 
         }
 
-        private void searchMovies()
+        private MovieList searchMovies()
         {
             MovieList results1 = new MovieList();
             MovieList results2 = new MovieList();
@@ -62,7 +63,7 @@ namespace Assignment_3
                 }
             }
 
-             results1.movielist.Clear();
+            results1.movielist.Clear();
 
 
             search = textBox3.Text.Split(' ');
@@ -82,7 +83,7 @@ namespace Assignment_3
 
             }
 
-             results2.movielist.Clear();
+            results2.movielist.Clear();
 
             search = textBox4.Text.Split(' ');
 
@@ -104,14 +105,48 @@ namespace Assignment_3
 
             results1.movielist.Clear();
 
-                foreach (var x in results2.movielist)
+            int minYear;
+            int MaxYear;
+
+            if (comboBox1.SelectedItem == null && comboBox2.SelectedItem == null)
+            {
+                minYear = 1900;
+                MaxYear = 2015;
+            }
+            else if((comboBox2 == null) || !(comboBox1 == null))
+            {
+                minYear = int.Parse(comboBox1.Text);
+                MaxYear = 2015;
+            }
+            else if ((comboBox1 == null) || !(comboBox2 == null))
+            {
+                minYear = 1900;
+                MaxYear = int.Parse(comboBox2.Text);
+            }
+            else
+            {
+                minYear = int.Parse(comboBox1.Text);
+                MaxYear = int.Parse(comboBox2.Text);
+            }
+
+
+
+
+            foreach (var x in results2.movielist)
+            {
+
+                if (minYear <= x.year && MaxYear >= x.year)
                 {
 
-                if(int.Parse(comboBox1.Text)>)
+                    results1.movielist.Add(x);
 
                 }
 
             }
+
+
+            return results1;
+        }
     }
 }
 
