@@ -31,7 +31,7 @@ namespace Assignment_3
                 titles[i] = Program.movies.movielist[i].title;
             }
 
-            //MessageBox.Show(watchList.);
+     
             //this.watchListView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             foreach(var x in Program.movies.movielist)
             {
@@ -43,12 +43,12 @@ namespace Assignment_3
                 });
                 watchListView.Items.Add(item);
             }
+
             //watchListView.Rows.Add(totalMovies);
             int rowNumber = 1;
 
             //Program.writeFile();
-            
-
+ 
             //MessageBox.Show(movies.movielist[0].actor[0]);
 
 
@@ -78,10 +78,34 @@ namespace Assignment_3
             {
                 MessageBox.Show("No results!");
 
-            } else { 
-                foreach (var x in results.movielist) {
-                    MessageBox.Show(x.title);
+            } else {
+
+                MainScreen resultScreen = new MainScreen();
+
+                resultScreen.watchListView.Items.Clear();
+
+                foreach (var x in results.movielist)
+                {
+                    ListViewItem item = new ListViewItem(new String[]
+                    {
+                    x.title,
+                    x.year.ToString(),
+                    x.genre[0]
+                    });
+                   resultScreen.watchListView.Items.Add(item);
                 }
+
+                this.Hide();
+                resultScreen.ShowDialog();
+                this.Close();
+                
+
+
+
+                /*foreach (var x in results.movielist) {
+                    *MessageBox.Show(x.title);
+                */
+            
               }
 
         }
