@@ -325,7 +325,7 @@
         private System.Windows.Forms.Label genre2;
         private System.Windows.Forms.Label genre1;
         private System.Windows.Forms.Button leaveReview;
-        private System.Windows.Forms.ListBox reviewBox;
         private System.Windows.Forms.Label userreviews;
+        public System.Windows.Forms.ListBox reviewBox;
     }
 }

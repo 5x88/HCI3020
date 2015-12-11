@@ -42,6 +42,7 @@ namespace Assignment_3
                 MessageBox.Show("No results!");
 
             } else {
+                label1.Text = "Search Results";
                 watchListView.Items.Clear();
                 populateMovieList(results);
                 backToWatchList.Enabled = true;
@@ -82,6 +83,7 @@ namespace Assignment_3
         {
             searchBoxEntry.Text = "";
             watchListView.Items.Clear();
+            label1.Text = "Watch List";
             populateMovieList(Program.watchlist);
             backToWatchList.Enabled = false;
             activeList = Program.watchlist;
@@ -93,7 +95,7 @@ namespace Assignment_3
         }
         private void watchListView_onDoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show(activeList.movielist[watchListView.SelectedIndices[0]].title);
+            MovieScreen selectedMovie = new MovieScreen(activeList.movielist[watchListView.SelectedIndices[0]]);
         }
         
     }

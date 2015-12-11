@@ -169,13 +169,13 @@ namespace Assignment_3
         private System.Windows.Forms.Label searchPromptText;
         private System.Windows.Forms.TextBox searchBoxEntry;
         private System.Windows.Forms.Button searchButtonGo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource movieListBindingSource;
-        private System.Windows.Forms.ListView watchListView;
         private System.Windows.Forms.ColumnHeader title;
         private System.Windows.Forms.ColumnHeader year;
         private System.Windows.Forms.ColumnHeader genre;
         private System.Windows.Forms.LinkLabel changeToAdvanced;
         private System.Windows.Forms.Button backToWatchList;
+        public System.Windows.Forms.ListView watchListView;
+        public System.Windows.Forms.Label label1;
     }
 }

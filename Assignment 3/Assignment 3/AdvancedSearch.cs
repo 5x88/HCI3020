@@ -24,8 +24,10 @@ namespace Assignment_3
         {
             MovieList results = searchMovies();
             ChartScreen chart = new ChartScreen(results);
+            parent.watchListView.Items.Clear();
             parent.populateMovieList(results);
             parent.Visible = true;
+            parent.label1.Text = "Search Results";
             chart.Show();
             this.Close();
         }
@@ -103,7 +105,6 @@ namespace Assignment_3
                 }
 
             }
-
             results1.movielist.Clear();
 
             int minYear;
@@ -114,43 +115,28 @@ namespace Assignment_3
                 minYear = 1900;
                 MaxYear = 2015;
             }
+            else if((comboBox2 == null) || !(comboBox1 == null))
+            {
+                minYear = int.Parse(comboBox1.Text);
+                MaxYear = 2015;
+            }
+            else if ((comboBox1 == null) || !(comboBox2 == null))
+            {
+                minYear = 1900;
+                MaxYear = int.Parse(comboBox2.Text);
+            }
             else
             {
-                if (comboBox1.SelectedItem == null)
-                {
-                    minYear = 1900;
-                }
-                else
-                {
-                    minYear = int.Parse(comboBox1.Text);
-                }
-                if (comboBox2.SelectedItem == null)
-                {
-                    MaxYear = 2015;
-                }
-                 else
-                {
-                    MaxYear = int.Parse(comboBox2.Text);
-                }
+                minYear = int.Parse(comboBox1.Text);
+                MaxYear = int.Parse(comboBox2.Text);
             }
-
-
-
-
             foreach (var x in results2.movielist)
             {
-
                 if (minYear <= x.year && MaxYear >= x.year)
                 {
-
                     results1.movielist.Add(x);
-
                 }
-
             }
-
-            MessageBox.Show(" " + results1.movielist.Count);
-
             return results1;
         }
     }
