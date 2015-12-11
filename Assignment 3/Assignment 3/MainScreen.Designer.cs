@@ -97,7 +97,6 @@
             this.watchListView.TabIndex = 10;
             this.watchListView.UseCompatibleStateImageBehavior = false;
             this.watchListView.View = System.Windows.Forms.View.Details;
-            this.watchListView.SelectedIndexChanged += new System.EventHandler(this.watchListView_SelectedIndexChanged);
             // 
             // title
             // 
