@@ -22,10 +22,11 @@ namespace Assignment_3
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            searchMovies();
-
+            MovieList results = searchMovies();
+            ChartScreen chart = new ChartScreen(results);
+            parent.populateMovieList(results);
             parent.Visible = true;
+            chart.Show();
             this.Close();
         }
 

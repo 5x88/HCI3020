@@ -59,11 +59,12 @@ namespace Assignment_3
         private void changeToAdvanced_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Visible = false;
+            //watchListView.Clear();
             AdvancedSearch advS = new AdvancedSearch(this);
             advS.Show();
         }
 
-        private void populateMovieList(MovieList list)
+        public void populateMovieList(MovieList list)
         {
             foreach (var x in list.movielist)
             {
