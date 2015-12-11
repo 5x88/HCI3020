@@ -56,7 +56,7 @@ namespace Assignment_3
             actors[4] = (textBox7.Text);
 
 
-           newMovie = new Movie(textBox1.Text, textBox10.Text, textBox8.Text, textBox11.Text, Convert.ToInt32(textBox2.Text),
+           newMovie = new Movie(textBox1.Text, textBox10.Text, textBox8.Text, textBox11.Text, int.Parse(textBox2.Text),
                 int.Parse(textBox9.Text), genre, actors);
             Program.movies.movielist.Add(newMovie);
             Program.writeFile();
