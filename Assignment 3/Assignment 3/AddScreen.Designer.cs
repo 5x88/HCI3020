@@ -1,6 +1,6 @@
 ﻿namespace Assignment_3
 {
-    partial class AddWindow
+    partial class AddScreen
     {
         /// <summary>
         /// Required designer variable.

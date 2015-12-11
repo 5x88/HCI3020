@@ -12,11 +12,11 @@ using System.Xml.Linq;
 
 namespace Assignment_3
 {
-    public partial class AddWindow : Form
+    public partial class AddScreen : Form
     {
 
 
-        public AddWindow()
+        public AddScreen()
         {
             InitializeComponent();
         }
@@ -52,6 +52,12 @@ namespace Assignment_3
             Program.movies.movielist.Add(newMovie);
             Program.writeFile();
         }
+
+        public void showEntry()
+        {
+
+        }
+
 
     }
 }

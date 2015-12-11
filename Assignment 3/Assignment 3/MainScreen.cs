@@ -45,7 +45,7 @@ namespace Assignment_3
             }
 
             //watchListView.Rows.Add(totalMovies);
-            int rowNumber = 1;
+           // int rowNumber = 1;
 
             //Program.writeFile();
  
@@ -98,14 +98,7 @@ namespace Assignment_3
                 this.Hide();
                 resultScreen.ShowDialog();
                 this.Close();
-                
-
-
-
-                /*foreach (var x in results.movielist) {
-                    *MessageBox.Show(x.title);
-                */
-            
+       
               }
 
         }
@@ -118,6 +111,13 @@ namespace Assignment_3
         private void changeToAdvanced_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //Advanced Search
+            MessageBox.Show("HI");
+        }
+
+        private void watchListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddScreen Selected = new AddScreen();
+            
         }
     }
 }
