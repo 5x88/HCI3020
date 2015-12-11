@@ -61,18 +61,28 @@ namespace Assignment_3
 
         private void searchButtonGo_Click(object sender, EventArgs e)
         {
-            string myText = "Text to analyze for words, bar, foo";
-            List<string> words = new List<string> { "foo", "bar", "xyz" };
-            var result = words.Where(i => myText.Contains(i)).ToList();
-
+            //Variables to compare
+            MovieList results = new MovieList();
             string[] search = searchBoxEntry.Text.Split(' ');
-             
-            foreach(var x in Program.movies.movielist)
-            {
-                
-                //x.title 
+
+            //Run through the list of movies, collecting the results
+            foreach (var x in Program.movies.movielist){   
+                //If search has any strings in it that title also has in it, return true
+                if (search.Where(i => x.title.Contains(i)).Any()) {
+                    results.movielist.Add(x);
+                }
             }
 
+            //If empty, return no results, otherwise print them in message boxs, fix this later
+            if (!results.movielist.Any())
+            {
+                MessageBox.Show("No results!");
+
+            } else { 
+                foreach (var x in results.movielist) {
+                    MessageBox.Show(x.title);
+                }
+              }
 
         }
 
