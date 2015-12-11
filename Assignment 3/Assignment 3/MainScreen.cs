@@ -12,6 +12,7 @@ namespace Assignment_3
 {
     public partial class MainScreen : Form 
     {
+        private AddWindow add2;
 
         public MainScreen()
         {
@@ -33,9 +34,12 @@ namespace Assignment_3
             */
             movies = Program.readFile();
             Program.writeFile(movies);
+
+            add2 = new AddWindow();
+            add2.Show();
             
 
-            //MessageBox.Show(movies.movielist[0].actor[0]);
+            MessageBox.Show(movies.movielist[0].actor[0]);
 
 
         }

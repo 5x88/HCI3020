@@ -1,6 +1,6 @@
 ﻿namespace Assignment_3
 {
-    partial class Form1
+    partial class AddWindow
     {
         /// <summary>
         /// Required designer variable.
