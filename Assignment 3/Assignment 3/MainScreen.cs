@@ -93,7 +93,7 @@ namespace Assignment_3
         }
         private void watchListView_onDoubleClick(object sender, EventArgs e)
         {
-            MovieScreen selectedMovie = new MovieScreen(activeList.movielist[watchListView.SelectedIndices[0]]);
+            MessageBox.Show(activeList.movielist[watchListView.SelectedIndices[0]].title);
         }
         
     }
