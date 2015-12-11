@@ -13,7 +13,8 @@ namespace Assignment_3
     static class Program
     {
         public static MovieList movies;
-        public static MovieList watchList;
+        public static MovieList watchlist;
+        public static MovieList searchlist;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -23,6 +24,8 @@ namespace Assignment_3
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             movies = readFile();
+            watchlist = new MovieList();
+            searchlist = new MovieList();
             Application.Run(new MainScreen());
         }
 

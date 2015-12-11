@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.searchPromptText = new System.Windows.Forms.Label();
             this.searchBoxEntry = new System.Windows.Forms.TextBox();
-            this.changeToAdvanced = new System.Windows.Forms.LinkLabel();
             this.searchButtonGo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.watchListView = new System.Windows.Forms.ListView();
             this.title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.year = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.genre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.changeToAdvanced = new System.Windows.Forms.LinkLabel();
             this.movieListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.movieListBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -59,17 +59,6 @@
             this.searchBoxEntry.Name = "searchBoxEntry";
             this.searchBoxEntry.Size = new System.Drawing.Size(311, 35);
             this.searchBoxEntry.TabIndex = 1;
-            // 
-            // changeToAdvanced
-            // 
-            this.changeToAdvanced.AutoSize = true;
-            this.changeToAdvanced.Location = new System.Drawing.Point(18, 46);
-            this.changeToAdvanced.Name = "changeToAdvanced";
-            this.changeToAdvanced.Size = new System.Drawing.Size(56, 13);
-            this.changeToAdvanced.TabIndex = 2;
-            this.changeToAdvanced.TabStop = true;
-            this.changeToAdvanced.Text = "Advanced";
-            this.changeToAdvanced.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changeToAdvanced_LinkClicked);
             // 
             // searchButtonGo
             // 
@@ -107,7 +96,6 @@
             this.watchListView.TabIndex = 10;
             this.watchListView.UseCompatibleStateImageBehavior = false;
             this.watchListView.View = System.Windows.Forms.View.Details;
-            this.watchListView.SelectedIndexChanged += new System.EventHandler(this.watchListView_SelectedIndexChanged);
             // 
             // title
             // 
@@ -124,6 +112,17 @@
             this.genre.Text = "Genre";
             this.genre.Width = 110;
             // 
+            // changeToAdvanced
+            // 
+            this.changeToAdvanced.AutoSize = true;
+            this.changeToAdvanced.Location = new System.Drawing.Point(18, 46);
+            this.changeToAdvanced.Name = "changeToAdvanced";
+            this.changeToAdvanced.Size = new System.Drawing.Size(56, 13);
+            this.changeToAdvanced.TabIndex = 2;
+            this.changeToAdvanced.TabStop = true;
+            this.changeToAdvanced.Text = "Advanced";
+            this.changeToAdvanced.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changeToAdvanced_LinkClicked);
+            // 
             // movieListBindingSource
             // 
             this.movieListBindingSource.DataSource = typeof(Assignment_3.MovieList);
@@ -133,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 448);
+            this.ClientSize = new System.Drawing.Size(425, 448);
             this.Controls.Add(this.watchListView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchButtonGo);
@@ -152,7 +151,6 @@
 
         private System.Windows.Forms.Label searchPromptText;
         private System.Windows.Forms.TextBox searchBoxEntry;
-        private System.Windows.Forms.LinkLabel changeToAdvanced;
         private System.Windows.Forms.Button searchButtonGo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource movieListBindingSource;
@@ -160,5 +158,6 @@
         private System.Windows.Forms.ColumnHeader title;
         private System.Windows.Forms.ColumnHeader year;
         private System.Windows.Forms.ColumnHeader genre;
+        private System.Windows.Forms.LinkLabel changeToAdvanced;
     }
 }

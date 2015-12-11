@@ -12,23 +12,32 @@ using System.Xml.Linq;
 
 namespace Assignment_3
 {
-    public partial class AddScreen : Form
+    public partial class AddWindow : Form
     {
+        MainScreen mainscreen;
 
-
-        public AddScreen()
+        public AddWindow()
         {
+            InitializeComponent();
+        }
+        
+
+        public AddWindow(MainScreen _mainscreen)
+        {
+            mainscreen = _mainscreen;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             addFromWindow();
+            mainscreen.Visible = true;
             Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            mainscreen.Visible = true;
             Close();
         }
 
@@ -52,12 +61,6 @@ namespace Assignment_3
             Program.movies.movielist.Add(newMovie);
             Program.writeFile();
         }
-
-        public void editEntry(Movie edit)
-        {
-            MessageBox.Show(edit.title);
-        }
-
 
     }
 }
