@@ -20,29 +20,29 @@ namespace Assignment_3
             this.length.Text = selected.length;
             this.directorname.Text = selected.director;
 
-            if (selected.actor[0] != null) {
+            if (selected.actor.Length >= 1 && selected.actor[0] != null) {
                 this.actor1.Text = selected.actor[0]; 
             } else {
                 this.actor1.Text = "";
             }
-            if (selected.actor[1] != null) {
+            if (selected.actor.Length >= 2 && selected.actor[1] != null) {
                 this.actor2.Text = selected.actor[1];
             } else {
                 this.actor2.Text = "";
             }
 
-            if (selected.actor[2] != null) {
+            if (selected.actor.Length >= 3 && selected.actor[2] != null) {
                 this.actor3.Text = selected.actor[2];
             } else {
                 this.actor3.Text = "";
             }
 
-            if (selected.actor[3] != null) {
+            if (selected.actor.Length >= 4 && selected.actor[3] != null) {
                 this.actor4.Text = selected.actor[3];
             } else {
                 this.actor4.Text = "";
             }
-            if (selected.actor[4] != null) {
+            if (selected.actor.Length >= 5 && selected.actor[4] != null) {
                 this.actor5.Text = selected.actor[4];
             } else {
                 this.actor5.Text = "";
