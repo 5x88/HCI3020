@@ -62,5 +62,16 @@ namespace Assignment_3
             Program.writeFile();
         }
 
+        private void editEntry(Movie movie)
+        {
+            textBox1.Text = movie.title;
+            textBox2.Text = "" + movie.year;
+
+
+
+        }
+
+
+
     }
 }

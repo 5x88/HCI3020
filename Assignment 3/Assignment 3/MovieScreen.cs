@@ -92,5 +92,16 @@ namespace Assignment_3
             reviewForm.Show();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Program.movies.movielist.Remove(selectedMovie);
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
