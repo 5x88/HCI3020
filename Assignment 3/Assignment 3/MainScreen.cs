@@ -17,46 +17,7 @@ namespace Assignment_3
         public MainScreen()
         {
             InitializeComponent();
-
-
-            MovieList movies = new MovieList();
-            movies = Program.readFile();
-            // Program.watchList.movielist.Add();
-            int totalMovies = Program.movies.movielist.Count;
-
-
-            string[] titles = new string[Program.movies.movielist.Count];
-            for (int i = 0; i < totalMovies; i++)
-            {
-                titles[i] = Program.movies.movielist[i].title;
-            }
-
-     
-            //this.watchListView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            foreach(var x in Program.movies.movielist)
-            {
-                ListViewItem item = new ListViewItem(new String[]
-                {
-                    x.title,
-                    x.year.ToString(),
-                    x.genre[0]
-                });
-                watchListView.Items.Add(item);
-            }
-
-            //watchListView.Rows.Add(totalMovies);
-            int rowNumber = 1;
-
-            //Program.writeFile();
- 
-            //MessageBox.Show(movies.movielist[0].actor[0]);
-
-
-        }
-
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-
+            populateMovieList(Program.movies);
         }
 
         private void searchButtonGo_Click(object sender, EventArgs e)
@@ -79,34 +40,9 @@ namespace Assignment_3
                 MessageBox.Show("No results!");
 
             } else {
-
-                MainScreen resultScreen = new MainScreen();
-
-                resultScreen.watchListView.Items.Clear();
-
-                foreach (var x in results.movielist)
-                {
-                    ListViewItem item = new ListViewItem(new String[]
-                    {
-                    x.title,
-                    x.year.ToString(),
-                    x.genre[0]
-                    });
-                   resultScreen.watchListView.Items.Add(item);
-                }
-
-                this.Hide();
-                resultScreen.ShowDialog();
-                this.Close();
-                
-
-
-
-                /*foreach (var x in results.movielist) {
-                    *MessageBox.Show(x.title);
-                */
-            
-              }
+                watchListView.Items.Clear();
+                populateMovieList(results);
+            }
 
         }
 
@@ -120,6 +56,20 @@ namespace Assignment_3
             this.Visible = false;
             AddWindow add = new AddWindow(this);
             add.Show();
+        }
+
+        private void populateMovieList(MovieList list)
+        {
+            foreach (var x in list.movielist)
+            {
+                ListViewItem item = new ListViewItem(new String[]
+                {
+                    x.title,
+                    x.year.ToString(),
+                    x.genre[0]
+                });
+                watchListView.Items.Add(item);
+            }
         }
     }
 }
