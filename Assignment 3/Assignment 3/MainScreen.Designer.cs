@@ -1,4 +1,6 @@
-﻿namespace Assignment_3
+﻿using System;
+
+namespace Assignment_3
 {
     partial class MainScreen
     {
@@ -38,6 +40,7 @@
             this.year = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.genre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.changeToAdvanced = new System.Windows.Forms.LinkLabel();
+            this.backToWatchList = new System.Windows.Forms.Button();
             this.movieListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.movieListBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -96,6 +99,8 @@
             this.watchListView.TabIndex = 10;
             this.watchListView.UseCompatibleStateImageBehavior = false;
             this.watchListView.View = System.Windows.Forms.View.Details;
+            this.watchListView.SelectedIndexChanged += new System.EventHandler(this.watchListView_SelectedIndexChanged);
+            this.watchListView.DoubleClick += new System.EventHandler(this.watchListView_onDoubleClick);
             // 
             // title
             // 
@@ -123,6 +128,16 @@
             this.changeToAdvanced.Text = "Advanced";
             this.changeToAdvanced.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.changeToAdvanced_LinkClicked);
             // 
+            // backToWatchList
+            // 
+            this.backToWatchList.Location = new System.Drawing.Point(320, 78);
+            this.backToWatchList.Name = "backToWatchList";
+            this.backToWatchList.Size = new System.Drawing.Size(98, 23);
+            this.backToWatchList.TabIndex = 11;
+            this.backToWatchList.Text = "Back to watchlist";
+            this.backToWatchList.UseVisualStyleBackColor = true;
+            this.backToWatchList.Click += new System.EventHandler(this.backToWatchList_Click);
+            // 
             // movieListBindingSource
             // 
             this.movieListBindingSource.DataSource = typeof(Assignment_3.MovieList);
@@ -133,6 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 448);
+            this.Controls.Add(this.backToWatchList);
             this.Controls.Add(this.watchListView);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchButtonGo);
@@ -147,6 +163,7 @@
 
         }
 
+
         #endregion
 
         private System.Windows.Forms.Label searchPromptText;
@@ -159,5 +176,6 @@
         private System.Windows.Forms.ColumnHeader year;
         private System.Windows.Forms.ColumnHeader genre;
         private System.Windows.Forms.LinkLabel changeToAdvanced;
+        private System.Windows.Forms.Button backToWatchList;
     }
 }

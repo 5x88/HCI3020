@@ -13,11 +13,13 @@ namespace Assignment_3
 {
     public partial class MainScreen : Form 
     {
-
+        MovieList activeList;
         public MainScreen()
         {
             InitializeComponent();
-            populateMovieList(Program.movies);
+            populateMovieList(Program.watchlist);
+            activeList = Program.watchlist;
+            this.SetStyle(ControlStyles.StandardDoubleClick, true);
         }
 
         private void searchButtonGo_Click(object sender, EventArgs e)
@@ -42,7 +44,10 @@ namespace Assignment_3
             } else {
                 watchListView.Items.Clear();
                 populateMovieList(results);
+                backToWatchList.Enabled = true;
+                activeList = results;
             }
+
 
         }
 
@@ -71,5 +76,24 @@ namespace Assignment_3
                 watchListView.Items.Add(item);
             }
         }
+
+        private void backToWatchList_Click(object sender, EventArgs e)
+        {
+            searchBoxEntry.Text = "";
+            watchListView.Items.Clear();
+            populateMovieList(Program.watchlist);
+            backToWatchList.Enabled = false;
+            activeList = Program.watchlist;
+        }
+
+        private void watchListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+        private void watchListView_onDoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show(activeList.movielist[watchListView.SelectedIndices[0]].title);
+        }
+        
     }
 }

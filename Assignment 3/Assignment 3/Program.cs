@@ -24,7 +24,7 @@ namespace Assignment_3
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             movies = readFile("movies.xml");
-            watchlist = new MovieList();
+            watchlist = readFile("watchlist.xml");
             searchlist = new MovieList();
             Application.Run(new MainScreen());
         }
