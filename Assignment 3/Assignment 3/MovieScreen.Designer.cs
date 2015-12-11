@@ -248,7 +248,7 @@
             // 
             this.leaveReview.Location = new System.Drawing.Point(19, 388);
             this.leaveReview.Name = "leaveReview";
-            this.leaveReview.Size = new System.Drawing.Size(94, 23);
+            this.leaveReview.Size = new System.Drawing.Size(142, 23);
             this.leaveReview.TabIndex = 19;
             this.leaveReview.Text = "Leave a Review";
             this.leaveReview.UseVisualStyleBackColor = true;
@@ -276,10 +276,11 @@
             // 
             this.button1.Location = new System.Drawing.Point(19, 360);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
+            this.button1.Size = new System.Drawing.Size(142, 23);
             this.button1.TabIndex = 23;
             this.button1.Text = "Add to Watchlist";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 

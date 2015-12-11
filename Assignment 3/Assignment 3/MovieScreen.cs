@@ -17,6 +17,9 @@ namespace Assignment_3
         {
             InitializeComponent();
             selectedMovie = selected;
+            if (Program.watchlist.movielist.Contains(selectedMovie)) {
+                button1.Text = "Remove From watchlist";
+            }
             this.title.Text = selected.title;
             this.year.Text = selected.year.ToString();
             this.length.Text = selected.length;
@@ -106,6 +109,16 @@ namespace Assignment_3
             EditWin.editEntry(selectedMovie);
             
 
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            if (Program.watchlist.movielist.Contains(selectedMovie)) {
+                Program.watchlist.movielist.Remove(selectedMovie);
+                button1.Text = "Add to Watchlist";
+            } else {
+                Program.watchlist.movielist.Add(selectedMovie);
+                button1.Text = "Remove from Watchlist";
+            }
         }
     }
 }
