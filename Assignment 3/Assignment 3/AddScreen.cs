@@ -20,7 +20,6 @@ namespace Assignment_3
         {
             InitializeComponent();
         }
-        
 
         public AddWindow(MainScreen _mainscreen)
         {
